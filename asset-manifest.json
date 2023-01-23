@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/clevertest/static/css/main.019ef57d.css",
+    "main.js": "/clevertest/static/js/main.52d42f75.js",
+    "static/media/book.png": "/clevertest/static/media/book.02dc349f665403e5eb37.png",
+    "static/media/logo.svg": "/clevertest/static/media/logo.1097fd992f98761c32eff390b013e916.svg",
+    "static/media/star.svg": "/clevertest/static/media/star.56270dbb51388e87a61650db2f5e4a9f.svg",
+    "static/media/sortDown.svg": "/clevertest/static/media/sortDown.6f6d1e97a78c7687d954012cbf2bdac0.svg",
+    "static/media/search.svg": "/clevertest/static/media/search.91615c901c567fe99f97a53beeeb327f.svg",
+    "index.html": "/clevertest/index.html",
+    "main.019ef57d.css.map": "/clevertest/static/css/main.019ef57d.css.map",
+    "main.52d42f75.js.map": "/clevertest/static/js/main.52d42f75.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.019ef57d.css",
+    "static/js/main.52d42f75.js"
+  ]
+}

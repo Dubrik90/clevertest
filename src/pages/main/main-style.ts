@@ -7,4 +7,6 @@ export const MainWrap = styled.section`
 `
 export const StyledNav = styled.div`
     display: flex;
+    flex-grow: 1;
+    column-gap: 5px;
 `

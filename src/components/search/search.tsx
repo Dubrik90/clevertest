@@ -1,10 +1,12 @@
-import React, {FC, useState} from 'react';
-import {SearchBlock, SearchWrapper, SortBlock, ViewBlock} from '../../styled/main-styled';
+import React, {FC} from 'react';
+import {SearchBlock, SearchIconMobile, SearchWrapper, SortBlock, ViewBlock} from '../../styled/main-styled';
 import search from '../../assets/img/search.svg';
 import sortDown from '../../assets/img/sortDown.svg';
+import searchMobile from '../../assets/img/search-mobile.svg';
+import filterMobile from '../../assets/img/filter-mobile.svg';
+
 import {BtnColumn} from '../../assets/img/column';
 import {BtnList} from '../../assets/img/list';
-import {StyledDiv} from '../../styled/div/styled-div';
 
 type SearchPropsType = {
     open: boolean
@@ -22,11 +24,18 @@ export const Search: FC<SearchPropsType> = ({onClick, open}) => (
             <img src={search} alt="search"/>
             {/* <img className="cross" src={cross} alt="cross"/> */}
         </SearchBlock>
+        <SearchIconMobile mediaWidth='590.98px' width='32px' height='32px'>
+            <img src={searchMobile} alt="searchMobile"/>
+        </SearchIconMobile>
         <div>
             <SortBlock>
                 <button type="submit">По рейтингу</button>
                 <img src={sortDown} alt="sortDown"/>
             </SortBlock>
+            <SearchIconMobile mediaWidth='590.98px' width='32px' height='32px'>
+                <img src={filterMobile} alt="searchMobile"/>
+            </SearchIconMobile>
+
         </div>
 
         <ViewBlock onClick={onClick}>

@@ -5,9 +5,19 @@ export const StyledNavMenu = styled.nav`
   flex-direction: column;
   row-gap: 16px;
   flex: 0 0 280px;
+  align-self: start;
+  position: sticky;
+  top: 20px;
+  margin-bottom: 62px;
+
+    @media (max-width: 911.98px) {
+        flex: 0 0 250px;
+    }
+    @media (max-width: 840.98px) {
+        display: none;
+    }
 
   ul {
-
     padding: 15px 5px 5px 22px;
     display: flex;
     flex-direction: column;
@@ -25,13 +35,13 @@ export const StyledNavMenu = styled.nav`
         line-height: 24px;
         letter-spacing: 0.1px;
         color: #363636;
-        display: flex;
-        column-gap: 5px;
+          @media (max-width: 911.98px) {
+              font-size: 14px;
+          }
+
 
         span {
-            align-self: flex-end;
-            justify-self: flex-start;
-          display: block;
+          padding-left: 5px;
           font-size: 14px;
           line-height: 24px;
           letter-spacing: 0.1px;
@@ -48,7 +58,7 @@ export const StyledNavMenu = styled.nav`
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    text-fill-color: transparent;
+    //text-fill-color: transparent;
     transition: all 0.3s;
   }
 
@@ -82,7 +92,7 @@ export const StyledNavMenu = styled.nav`
 `
 
 export const StyledTitle = styled.div`
-    padding: 5px 35px 0px 0;
+    padding: 5px 35px 0 0;
 
     h2 {
         font-weight: 700;
@@ -93,7 +103,7 @@ export const StyledTitle = styled.div`
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
-        padding: 0px 0px 10px 0px;
+        padding: 0 0 10px 0;
         border-bottom: 1px solid #000;
     }
 `

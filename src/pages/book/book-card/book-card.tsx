@@ -1,4 +1,5 @@
 import React, {FC} from 'react';
+import {Link} from "react-router-dom";
 import {
     BlockList,
     BlockListWrap,
@@ -10,10 +11,11 @@ import {
     TitleBook,
     TitleBookList
 } from '../../../styled/main-styled';
-import {StyledWrapperImage} from '../../../styled/styled-wpapper';
+import {StyledWrapperImage, WrapperImageBlock} from '../../../styled/styled-wpapper';
 import {BookType} from '../../../assets/type/types';
 import bookImage from '../../../assets/img/book.png'
 import star from '../../../assets/img/star.svg'
+
 
 
 type BookCardPropsType = {
@@ -27,10 +29,10 @@ export const BookCard: FC<BookCardPropsType> = ({book, isOpen}) => (
         {isOpen
             ?
             <BlockTiles>
-                <StyledWrapperImage width="174px" height="242px" borderRadius="0">
+                <WrapperImageBlock width="174px" height="242px" borderRadius="0">
                     <img src={bookImage}
                          alt="Logo"/>
-                </StyledWrapperImage>
+                </WrapperImageBlock>
                 <div>
                     {
                         book.rating === 0
@@ -44,11 +46,12 @@ export const BookCard: FC<BookCardPropsType> = ({book, isOpen}) => (
                 <SubTitleBook>
                     {book.author} {book.year}
                 </SubTitleBook>
+               <Link to={`/book/${book.title}`}>на страницу книги</Link>
                 <ButtonStyle type="submit">ЗАБРОНИРОВАТЬ</ButtonStyle>
             </BlockTiles>
             :
             <BlockList>
-                <StyledWrapperImage width="174px" height="242px" borderRadius="0">
+                <StyledWrapperImage width="120px" height="172px" borderRadius="0">
                     <img src={bookImage}
                          alt="Logo"/>
                 </StyledWrapperImage>

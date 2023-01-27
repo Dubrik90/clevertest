@@ -28,7 +28,7 @@ export const Header = () => {
                         Библиотека
                     </HeaderText>
                     <HeaderProfile>
-                        <p>Привет, Иван!</p>
+                        <p>Привет, Иван1!</p>
                         <HeaderImageProfile width="58px" height="58px">
                             <Link to="/">
                                 <img src={avatar}

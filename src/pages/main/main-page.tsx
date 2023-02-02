@@ -1,48 +1,44 @@
-import React from 'react';
+import React, {useState} from 'react';
+import {useParams} from 'react-router-dom';
 
-import {Route, Routes} from 'react-router-dom';
-import {StyledContainer} from '../../styled/styled-wpapper';
-import {Rules} from '../rules/rules';
-import {Treaty} from '../treaty/treaty';
-import {MainWrap, StyledNav} from './main-style';
-import {SharedLayout} from "../shared-layout";
-import {SingleCategory} from "../single-category";
-import {BooksPage} from "../book";
+import booksJS from '../../app/data.json';
+import {Search} from '../../components/search/search';
+import {StyledDiv} from '../../styled/div/styled-div';
+import {BookPageStyle} from '../../styled/main-styled';
+import {BookCard} from '../book/book-card';
+
+const bookData = booksJS.publicistic
+
+export const MainPage = () => {
+    const {category} = useParams()
+
+    const [open, setOpen] = useState<boolean>(true);
+    const onClickHandler = () => {
+        setOpen(!open)
+    }
+
+    return (
+        <BookPageStyle>
+            <Search open={open}
+                    onClick={onClickHandler}
+            />
+            <StyledDiv isOpen={open}>
+                {
+                    bookData.map(el => (
+                        <BookCard book={el}
+                                  key={el.id}
+                                  isOpen={open}
+                                  category={category}
+                        />
+                    ))
+                }
+            </StyledDiv>
+        </BookPageStyle>
+    )
+};
 
 
-export const MainPage = () => (
-    <MainWrap className="main-page">
-        <StyledContainer>
-            <StyledNav>
-                <Routes>
-                    <Route path="/*" element={<SharedLayout/>}>
-                        <Route index={true} element={<BooksPage/>}/>
-
-                        <Route path="rules" element={<Rules/>}/>
-                        <Route path="treaty" element={<Treaty/>}/>
-                    </Route>
-                    <Route path="book/:bookId" element={<SingleCategory/>}/>
-                </Routes>
 
 
-            </StyledNav>
-        </StyledContainer>
-    </MainWrap>
-);
 
-// export const MainPage = () => (
-//     <MainWrap className="main-page">
-//         <StyledContainer>
-//             <StyledNav>
-//                 <NavMenu/>
-//                 <Routes>
-//                     {/* <Route path="/" element={<NavMenu/>}/> */}
-//                     <Route path="/" element={<BooksPage/>}/>
-//                     <Route path="/rules" element={<Rules/>}/>
-//                     <Route path="/treaty" element={<Treaty/>}/>
-//                 </Routes>
-//             </StyledNav>
-//         </StyledContainer>
-//     </MainWrap>
-// );
 

@@ -1,14 +1,16 @@
 import React from 'react';
-import {StyledContainer} from '../../styled/styled-wpapper';
+
+import facebook from '../../assets/img/social/faceboock.svg'
+import instagram from '../../assets/img/social/instagramm.svg'
+import linkedin from '../../assets/img/social/linkedin.svg'
+import vk from '../../assets/img/social/vk.svg'
+import {Container} from '../../styled/styled-wpapper';
+
 import {FooterBlock, FooterStyle, SocialIcons} from './footer-styled';
-import facebook from '../../assets/img/faceboock.svg'
-import instagram from '../../assets/img/instagramm.svg'
-import vk from '../../assets/img/vk.svg'
-import linkedin from '../../assets/img/linkedin.svg'
 
 export const Footer = () => (
     <FooterStyle>
-        <StyledContainer>
+        <Container>
             <FooterBlock>
                 <p>
                     © 2020-2023 Cleverland. Все права защищены.
@@ -28,7 +30,7 @@ export const Footer = () => (
                     </a>
                 </SocialIcons>
             </FooterBlock>
-        </StyledContainer>
+        </Container>
     </FooterStyle>
 
 );

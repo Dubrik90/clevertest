@@ -1,23 +1,35 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import {HashRouter} from 'react-router-dom';
+import {HashRouter, Navigate, Route, Routes} from 'react-router-dom';
+
+import {Header} from './components/header';
+import {Footer} from './components/footer';
+import {BooksPage} from './pages/book';
+import {Layout} from './pages/layout';
 import {MainPage} from './pages/main';
+import {Сontract} from './pages/main/сontract/сontract';
+import {Wrapper} from './styled/styled-wpapper';
 
 import './index.css';
-import {Header} from './components/header/header';
-import {Footer} from './components/footer/footer';
-import {StyledWrapper} from './styled/styled-wpapper';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
     <React.StrictMode>
         <HashRouter>
-            <StyledWrapper>
+            <Wrapper>
                 <Header/>
-                <MainPage/>
+                <Routes>
+                    <Route path="/" element={<Layout/>}>
+                        <Route index={true} element={<Navigate to="/books/all"/>}/>
+                        <Route path="/books/:category" element={<MainPage/>}/>
+                        <Route path="rules" element={<Сontract title="Правила пользования"/>}/>
+                        <Route path="treaty" element={<Сontract title="Договор оферты"/>}/>
+                    </Route>
+                    <Route path="book/:category/:bookId" element={<BooksPage/>}/>
+                </Routes>
                 <Footer/>
-            </StyledWrapper>
+            </Wrapper>
         </HashRouter>
     </React.StrictMode>
 );

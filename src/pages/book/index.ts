@@ -1,2 +1,3 @@
-export { BooksPage } from './book-page';
+export {BooksPage} from './book-page';
+
 

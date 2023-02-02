@@ -1,4 +1,5 @@
 import {FC} from 'react';
+
 import {Burger} from './style-burger';
 
 type PropsDefault = {
@@ -7,7 +8,6 @@ type PropsDefault = {
 
 
 type StyledButton = {
-
     isOpenBurger: boolean
 }
 

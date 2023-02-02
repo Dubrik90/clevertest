@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-export const FooterStyle = styled.div`
-padding-top: 16px;
+export const FooterStyle = styled.footer`
+    padding-top: 16px;
     padding-bottom: 16px;
 `
 
@@ -15,18 +15,14 @@ export const FooterBlock = styled.div`
     letter-spacing: 0.1px;
     color: #363636;
 
-    @media (max-width: 552.98px) {
+    @media (max-width: 552px) {
         flex-direction: column;
         text-align: center;
         row-gap: 16px;
     }
 `
-
-
 export const SocialIcons = styled.div`
-  display: flex;
+    display: flex;
     flex: 0 0 24px;
     column-gap: 24px;
-
-
 `

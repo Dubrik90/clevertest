@@ -1,10 +1,11 @@
 import styled from 'styled-components';
+
 import {PropsBurger} from './burger';
 
 export const Burger = styled.button<PropsBurger>`
 
   display: none;
-  @media (max-width: 768.98px) {
+  @media (max-width: 768px) {
     display: block;
     position: relative;
     width: 30px;
@@ -24,7 +25,7 @@ export const Burger = styled.button<PropsBurger>`
       height: 2px;
       background: #363636;
 
-      @media (max-width: 768.98px) {
+      @media (max-width: 768px) {
         background: #363636;
       }
     }

@@ -1,5 +1,5 @@
-import React, {FC} from "react";
-import {StyledWrapperImage} from './styled-wpapper';
+import React, {FC} from 'react';
+import {HeaderImage} from '../components/header/header-style';
 
 export type PropsImageDefault = {
     width: string,
@@ -14,5 +14,5 @@ export type PropsImg = PropsImageDefault;
 export type PropsImageType = Partial<PropsImg>
 
 export const ImageWrapper: FC<PropsImageType> = (props) => (
-    <StyledWrapperImage {...props}/>
+    <HeaderImage {...props}/>
 );

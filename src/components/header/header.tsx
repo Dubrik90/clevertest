@@ -1,10 +1,18 @@
 import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
-import {HeaderWrapper, StyledContainer, StyledHeaderImage} from '../../styled/styled-wpapper';
-import {HeaderImageProfile, HeaderProfile, HeaderStyle, HeaderText} from './header-style';
-import logo from '../../assets/img/logo.svg';
+
 import avatar from '../../assets/img/avatar.png';
+import logo from '../../assets/img/logo.svg';
 import {Burger} from '../../styled/menu-burger/style-burger';
+import {Container} from '../../styled/styled-wpapper';
+
+import {
+    HeaderImageProfile,
+    HeaderProfile,
+    HeaderWrapper,
+    HeaderTitle,
+    HeaderContent, HeaderImageLogo, ProfileName
+} from './header-style';
 
 export const Header = () => {
     const [openBurger, setOpenBurger] = useState<boolean>(false);
@@ -14,21 +22,21 @@ export const Header = () => {
 
 
     return (
-        <HeaderStyle>
-            <StyledContainer>
-                <HeaderWrapper>
-                    <StyledHeaderImage width="170px" height="40px" borderRadius="0">
+        <HeaderWrapper>
+            <Container>
+                <HeaderContent>
+                    <HeaderImageLogo width="170px" height="40px" borderRadius="0">
                         <Link to="/">
                             <img src={logo}
                                  alt="Logo"/>
                         </Link>
-                    </StyledHeaderImage>
+                    </HeaderImageLogo>
                     <Burger isOpenBurger={openBurger} onClick={onClickBurger}><span/></Burger>
-                    <HeaderText>
+                    <HeaderTitle>
                         Библиотека
-                    </HeaderText>
+                    </HeaderTitle>
                     <HeaderProfile>
-                        <p>Привет, Иван!</p>
+                        <ProfileName>Привет, Иван!</ProfileName>
                         <HeaderImageProfile width="58px" height="58px">
                             <Link to="/">
                                 <img src={avatar}
@@ -36,10 +44,9 @@ export const Header = () => {
                             </Link>
                         </HeaderImageProfile>
                     </HeaderProfile>
-                </HeaderWrapper>
-
-            </StyledContainer>
-        </HeaderStyle>
+                </HeaderContent>
+            </Container>
+        </HeaderWrapper>
     )
 };
 

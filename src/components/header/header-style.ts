@@ -6,9 +6,6 @@ export const HeaderWrapper = styled.header`
     padding: 32px 0 15px 0;
     min-height: 58px;
 
-    @media (max-width: 768px) {
-        margin-bottom: 24px;
-    }
     @media (max-width: 320px) {
         margin-bottom: 8px;
     }

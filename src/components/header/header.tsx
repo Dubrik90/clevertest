@@ -20,7 +20,6 @@ export const Header = () => {
         setOpenBurger(!openBurger)
     }
 
-
     return (
         <HeaderWrapper>
             <Container>

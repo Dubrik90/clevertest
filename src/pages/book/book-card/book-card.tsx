@@ -7,14 +7,7 @@ import star from '../../../assets/img/star.svg'
 import {BookType} from '../../../assets/type/types';
 import {StyledButton} from '../../../components/button/styled-button';
 
-import {
-    BlockList, BlockListWrap, ListRating,
-    BlockTiles,
-    ImageBlock,
-    Imagelist, StarBookList,
-    SubTitleBook, SubTitleBookList,
-    TitleBook, TitleBookList, RatingWrapper
-} from './book-card-style';
+import {BookWrapper, ImageBlock, RatingWrapper, SubTitleBook, TitleBook} from './book-card-style';
 
 
 type BookCardPropsType = {
@@ -29,70 +22,34 @@ export const BookCard: FC<BookCardPropsType> = (
         isOpen,
         category
     }) => (
-    // eslint-disable-next-line react/jsx-no-useless-fragment
-    <>
-        {
-            isOpen
-                ?
-                <Link data-test-id="card" to={`/book/${category}/${book.title}`}>
-                    <BlockTiles>
-                        <ImageBlock width="174px" height="242px" borderRadius="0">
-                            <img src={bookImage}
-                                 alt="Logo"/>
-                        </ImageBlock>
-                        <RatingWrapper>
-                            {
-                                book.rating === 0
-                                    ? 'ещё нет оценок'
-                                    : <img src={star} alt="star"/>
-                            }
-                        </RatingWrapper>
-                        <TitleBook>
-                            {book.title}
-                        </TitleBook>
-                        <SubTitleBook>
-                            {book.author} {book.year}
-                        </SubTitleBook>
-                        <StyledButton isBooked={book.isBooked}>
-                            {book.isBooked ? 'ЗАБРОНИРОВАТЬ' : 'занята до 03.05'}
-                        </StyledButton>
-                    </BlockTiles>
-                </Link>
-                :
-                <Link data-test-id="card" to={`/book/${category}/${book.title}`}>
-                    <BlockList>
-                        <Imagelist width="120px" height="170px" borderRadius="0">
-                            <img src={bookImage}
-                                 alt="Logo"/>
-                        </Imagelist>
-                        <BlockListWrap>
-                            <TitleBookList>
-                                {book.title}
-                            </TitleBookList>
-                            <SubTitleBookList>
-                                {book.author} {book.year}
-                            </SubTitleBookList>
-                            <StarBookList>
-                                <ListRating>
-                                    {
-                                        book.rating === 0
-                                            ? 'ещё нет оценок'
-                                            : <img src={star} alt="star"/>
-                                    }
-                                </ListRating>
-                                <StyledButton isBooked={book.isBooked}>
-                                    {book.isBooked ? 'ЗАБРОНИРОВАТЬ' : 'занята до 03.05'}
-                                </StyledButton>
-                            </StarBookList>
-                        </BlockListWrap>
-                    </BlockList>
-                </Link>
-        }
-    </>
+    <Link data-test-id="card" to={`/book/${category}/${book.title}`}>
+        <BookWrapper isOpen={isOpen}>
+            <ImageBlock isOpen={isOpen} width="174px" height="242px" borderRadius="0">
+                <img src={bookImage}
+                     alt="Logo"/>
+            </ImageBlock>
+            <RatingWrapper isOpen={isOpen}>
+                {
+                    book.rating === 0
+                        ? 'ещё нет оценок'
+                        : <img src={star} alt="star"/>
+                }
+            </RatingWrapper>
+            <TitleBook isOpen={isOpen}>
+                {book.title}
+            </TitleBook>
+            <SubTitleBook isOpen={isOpen}>
+                {book.author} {book.year}
+            </SubTitleBook>
+            <StyledButton
+                isBooked={book.isBooked}
+                isOpen={isOpen}
+            >
+                {book.isBooked ? 'ЗАБРОНИРОВАТЬ' : 'занята до 03.05'}
+            </StyledButton>
+        </BookWrapper>
+    </Link>
 )
-
-
-
 
 
 

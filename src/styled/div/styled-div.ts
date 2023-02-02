@@ -9,7 +9,7 @@ export const StyledDiv = styled.div<PropsDiv>`
     gap: 16px;
     @media (max-width: 1050px) {
         grid-template-columns: repeat(3, 1fr);
-        gap: 35px;
+        gap: ${({isOpen}) => isOpen && '35px'};
     }
     @media (max-width: 911px) {
         grid-template-columns: repeat(3, 1fr);
@@ -24,7 +24,8 @@ export const StyledDiv = styled.div<PropsDiv>`
     }
 
     a {
-        display: flex;
+        display: ${({isOpen}) => isOpen && 'flex'};
+        //display: flex;
         @media (max-width: 840px) {
             flex-grow: 1;
             justify-content: center;

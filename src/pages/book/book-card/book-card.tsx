@@ -1,11 +1,10 @@
 import React, {FC} from 'react';
 
 import {Link} from 'react-router-dom';
-
-import bookImage from '../../../assets/img/book.png'
 import star from '../../../assets/img/star.svg'
 import {BookType} from '../../../assets/type/types';
-import {StyledButton} from '../../../components/button/styled-button';
+import {StyledButton} from '../../../common/components/button/styled-button';
+import imageNone from '../../../assets/img/imageNone.png'
 
 import {BookWrapper, ImageBlock, RatingWrapper, SubTitleBook, TitleBook} from './book-card-style';
 
@@ -24,8 +23,8 @@ export const BookCard: FC<BookCardPropsType> = (
     }) => (
     <Link data-test-id="card" to={`/book/${category}/${book.title}`}>
         <BookWrapper isOpen={isOpen}>
-            <ImageBlock isOpen={isOpen} width="174px" height="242px" borderRadius="0">
-                <img src={bookImage}
+            <ImageBlock isOpen={isOpen}>
+                <img src={book?.image?.length ? book.image[0] : imageNone}
                      alt="Logo"/>
             </ImageBlock>
             <RatingWrapper isOpen={isOpen}>

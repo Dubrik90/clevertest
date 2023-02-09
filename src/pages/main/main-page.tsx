@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {useParams} from 'react-router-dom';
 
 import booksJS from '../../app/data.json';
-import {Search} from '../../components/search/search';
+import {Search} from '../../common/components/search/search';
 import {StyledDiv} from '../../styled/div/styled-div';
 import {BookPageStyle} from '../../styled/main-styled';
 import {BookCard} from '../book/book-card';

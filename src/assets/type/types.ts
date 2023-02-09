@@ -3,7 +3,7 @@ export type BookType = {
     bookedTill: string,
     category: string,
     id: string,
-    image?: string,
+    image?: string[],
     isBooked: boolean,
     rating: number,
     title: string,

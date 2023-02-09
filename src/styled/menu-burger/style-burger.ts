@@ -12,7 +12,7 @@ export const Burger = styled.button<PropsBurger>`
     flex: 0 0 30px;
     height: 18px;
     cursor: pointer;
-    z-index: 5;
+    z-index: 50;
 
     span,
     &::before,

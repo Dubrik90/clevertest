@@ -1,15 +1,12 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {useParams} from 'react-router-dom';
-
-import book from '../../assets/img/bookBig.png';
 import ellipse from '../../assets/img/Ellipse.png';
 import star from '../../assets/img/star.svg';
 import {Container} from '../../styled/styled-wpapper';
-import {MainWrap} from '../main/main-style';
+import {Book} from '../main/main-style';
 
 import {
     AboutBlock,
-    BockImage,
     BookButton,
     BookInfoWrap,
     BookName,
@@ -17,22 +14,33 @@ import {
     BreadcrumbsBlock,
     BreadcrumbsWrapper,
     Category,
-    DescriptionBook, DeskBlock,
+    DescriptionBook,
+    DeskBlock,
     Detailed,
-    Detailedwrap,
+    Detailedwrap, ImgReview,
     Rating,
     Reviews,
     ReviewsBlock,
-    ReviewsWrap,
+    ReviewsWrap, SwiperWrapper,
     TitleRating
 } from './book-page-style';
+import {SwiperSlider} from '../../common/components/swiper/slider-swiper';
+import booksJS from "../../app/data.json";
+import arrowReviews from '../../assets/img/action/arrow-reviews.svg'
 
 
 export const BooksPage = () => {
     const {category, bookId} = useParams()
+    const book = booksJS.publicistic.filter(el => el.title === bookId)
+
+    const [openReviews, setOpenReviews] = useState(false)
+
+    const onClickOpenHandler = () => {
+        setOpenReviews(!openReviews)
+    }
 
     return (
-        <MainWrap className="main-page">
+        <Book>
             <BreadcrumbsWrapper>
                 <Container>
                     <BreadcrumbsBlock>
@@ -47,10 +55,9 @@ export const BooksPage = () => {
             </BreadcrumbsWrapper>
             <Container>
                 <BooksAbout>
-                    <BockImage>
-                        <img src={book}
-                             alt="Logo"/>
-                    </BockImage>
+                    <SwiperWrapper>
+                        <SwiperSlider image={book[0].image}/>
+                    </SwiperWrapper>
                     <DescriptionBook>
                         <p>Грокаем алгоритмы. Иллюстрированное пособие для программистов и
                             любопытствующих
@@ -73,7 +80,6 @@ export const BooksPage = () => {
                                 веселое и увлекательное занятие.
                             </p>
                         </DeskBlock>
-
                     </DescriptionBook>
                 </BooksAbout>
                 <BookInfoWrap>
@@ -128,10 +134,19 @@ export const BooksPage = () => {
                         </Detailed>
                     </AboutBlock>
                     <ReviewsBlock>
-                        <TitleRating>
-                            Отзывы
+                        <TitleRating onClick={onClickOpenHandler}>
+                            <p>
+                                Отзывы
+                                <span>2</span>
+                            </p>
+                            <ImgReview onClick={onClickOpenHandler}
+                                       src={arrowReviews}
+                                       data-test-id='button-hide-reviews'
+                                       openReviews={openReviews}
+                                       alt="arrowReviews"/>
+
                         </TitleRating>
-                        <Reviews>
+                        <Reviews openReviews={openReviews}>
                             <ReviewsWrap>
                                 <div>
                                     <img src={ellipse} alt="ellipse"/>
@@ -180,11 +195,12 @@ export const BooksPage = () => {
                                 <p/>
                             </ReviewsWrap>
                         </Reviews>
+                        <BookButton data-test-id='button-rating'>оценить книгу</BookButton>
                     </ReviewsBlock>
-                    <BookButton>оценить книгу</BookButton>
+
                 </BookInfoWrap>
             </Container>
-        </MainWrap>
+        </Book>
 
 
     )

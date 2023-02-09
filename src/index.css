@@ -79,7 +79,7 @@ body {
 }
 @media (max-width:840.98px) {
   #root {
-    overflow:hidden;
+    /*overflow:hidden;*/
   }
 }
 code {

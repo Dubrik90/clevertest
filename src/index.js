@@ -2,34 +2,34 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import {HashRouter, Navigate, Route, Routes} from 'react-router-dom';
 
-import {Header} from './components/header';
-import {Footer} from './components/footer';
+import {Provider} from 'react-redux';
 import {BooksPage} from './pages/book';
 import {Layout} from './pages/layout';
 import {MainPage} from './pages/main';
 import {Сontract} from './pages/main/сontract/сontract';
-import {Wrapper} from './styled/styled-wpapper';
 
 import './index.css';
+import {store} from './app/store';
+import {LayoutMainPage} from './pages/layout-main-page';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
-    <React.StrictMode>
+    // <React.StrictMode>
+    <Provider store={store}>
         <HashRouter>
-            <Wrapper>
-                <Header/>
-                <Routes>
-                    <Route path="/" element={<Layout/>}>
+            <Routes>
+                <Route path="/" element={<Layout/>}>
+                    <Route element={<LayoutMainPage/>}>
                         <Route index={true} element={<Navigate to="/books/all"/>}/>
                         <Route path="/books/:category" element={<MainPage/>}/>
-                        <Route path="rules" element={<Сontract title="Правила пользования"/>}/>
-                        <Route path="treaty" element={<Сontract title="Договор оферты"/>}/>
+                        <Route path="/rules" element={<Сontract title="Правила пользования"/>}/>
+                        <Route path="/treaty" element={<Сontract title="Договор оферты"/>}/>
                     </Route>
                     <Route path="book/:category/:bookId" element={<BooksPage/>}/>
-                </Routes>
-                <Footer/>
-            </Wrapper>
+                </Route>
+            </Routes>
         </HashRouter>
-    </React.StrictMode>
+    </Provider>
+    // </React.StrictMode>
 );

@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {HeaderImage} from '../components/header/header-style';
+import {HeaderImage} from '../common/components/header/header-style';
 
 export type PropsImageDefault = {
     width: string,

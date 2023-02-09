@@ -2,7 +2,7 @@
     "publicistic": [
         {
             "id": "63ca721f13f819f5347e7e06",
-            "image": "http://www.google.com/image.jpg",
+            "image": [],
             "category": "publicistic",
             "author": "Lori Sykes",
             "title": "Ira Court, Ribera, Federated States Of Micronesia",
@@ -13,7 +13,9 @@
         },
         {
             "id": "63ca721fab15225ce20c9926",
-            "image": "http://www.google.com/image.jpg",
+            "image": [
+                "https://swiperjs.com/demos/images/nature-1.jpg"
+            ],
             "category": "publicistic",
             "author": "Mayer Mckee",
             "title": "Columbia Place, Waterloo, Alaska",
@@ -24,7 +26,11 @@
         },
         {
             "id": "63ca721f8bd7acadd9e2cfec",
-            "image": "http://www.google.com/image.jpg",
+            "image": [
+                "https://swiperjs.com/demos/images/nature-2.jpg",
+                "https://swiperjs.com/demos/images/nature-3.jpg",
+                "https://swiperjs.com/demos/images/nature-4.jpg"
+            ],
             "category": "publicistic",
             "author": "Washington Mcmillan",
             "title": "Harbor Court, Tilden, Rhode Island",
@@ -35,7 +41,7 @@
         },
         {
             "id": "63ca721f256bf38606a3055e",
-            "image": "http://www.google.com/image.jpg",
+            "image": ["https://swiperjs.com/demos/images/nature-8.jpg"],
             "category": "publicistic",
             "author": "Turner Copeland",
             "title": "Bogart Street, Irwin, Washington",
@@ -46,7 +52,7 @@
         },
         {
             "id": "63ca721f196bb5ba65332f78",
-            "image": "http://www.google.com/image.jpg",
+            "image": [],
             "category": "publicistic",
             "author": "Silvia Vincent",
             "title": "Bainbridge Street, Edenburg, North Carolina",
@@ -57,7 +63,7 @@
         },
         {
             "id": "63ca721fba1196f860ca1434",
-            "image": "http://www.google.com/image.jpg",
+            "image": [],
             "category": "publicistic",
             "author": "Myers Burns",
             "title": "Montieth Street, Cliffside, New York",
@@ -68,7 +74,7 @@
         },
         {
             "id": "63ca721f763c5f861ce9338d",
-            "image": "http://www.google.com/image.jpg",
+            "image": [],
             "category": "publicistic",
             "author": "Lloyd Diaz",
             "title": "Schenck Avenue, Fedora, California",
@@ -76,50 +82,6 @@
             "year": 2016,
             "isBooked": true,
             "bookedTill": "2024-02-02T06:54:46 -03:00"
-        },
-        {
-            "id": "63ca721f149c328e43466e39",
-            "image": "http://www.google.com/image.jpg",
-            "category": "publicistic",
-            "author": "Cheryl Zimmerman",
-            "title": "Leonard Street, Ellerslie, Georgia",
-            "rating": 5,
-            "year": 1971,
-            "isBooked": false,
-            "bookedTill": "2024-08-09T12:15:06 -03:00"
-        },
-        {
-            "id": "63ca721f302ee41a5ab34761",
-            "image": "http://www.google.com/image.jpg",
-            "category": "publicistic",
-            "author": "Dillard Williams",
-            "title": "Jardine Place, Temperanceville, Vermont",
-            "rating": 2,
-            "year": 2004,
-            "isBooked": false,
-            "bookedTill": "2024-03-05T04:28:08 -03:00"
-        },
-        {
-            "id": "63ca721f497daecb25bbeabb",
-            "image": "http://www.google.com/image.jpg",
-            "category": "publicistic",
-            "author": "Alejandra Brooks",
-            "title": "Jodie Court, Coloma, District Of Columbia",
-            "rating": 4,
-            "year": 1943,
-            "isBooked": true,
-            "bookedTill": "2023-05-30T12:19:51 -03:00"
-        },
-        {
-            "id": "63ca721f5c32475217474c04",
-            "image": "http://www.google.com/image.jpg",
-            "category": "publicistic",
-            "author": "Henrietta Ray",
-            "title": "Brightwater Court, Southmont, Alabama",
-            "rating": 1,
-            "year": 1901,
-            "isBooked": true,
-            "bookedTill": "2024-09-23T09:08:59 -03:00"
         }
     ]
 }

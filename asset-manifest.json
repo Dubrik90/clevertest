@@ -1,25 +1,28 @@
 {
   "files": {
-    "main.css": "/clevertest/static/css/main.88d37f3b.css",
-    "main.js": "/clevertest/static/js/main.055b24f8.js",
+    "main.css": "/clevertest/static/css/main.e7b5b307.css",
+    "main.js": "/clevertest/static/js/main.ff5340af.js",
     "static/media/logo.svg": "/clevertest/static/media/logo.1097fd992f98761c32eff390b013e916.svg",
-    "static/media/star.svg": "/clevertest/static/media/star.56270dbb51388e87a61650db2f5e4a9f.svg",
     "static/media/filter-mobile.svg": "/clevertest/static/media/filter-mobile.bf46d082a9f2da375bb478d5b4f2fe30.svg",
     "static/media/search-mobile.svg": "/clevertest/static/media/search-mobile.b5000474fb1e468886e06583ca5321a5.svg",
+    "static/media/loader.svg": "/clevertest/static/media/loader.9cfcabec4f251623525015ef6d0b7e10.svg",
     "static/media/instagramm.svg": "/clevertest/static/media/instagramm.7de1c62ae1c7d3070b3db60e8d69d73d.svg",
     "static/media/searchClose.svg": "/clevertest/static/media/searchClose.53da4cb64b8ae3fc3044c753499761fc.svg",
     "static/media/vk.svg": "/clevertest/static/media/vk.73b7e7652d2ed5d7918e0b7f0c459c85.svg",
     "static/media/sortDown.svg": "/clevertest/static/media/sortDown.6f6d1e97a78c7687d954012cbf2bdac0.svg",
-    "static/media/Icon-arrow.svg": "/clevertest/static/media/Icon-arrow.5a00a2b7c130172dfb9550db63763e1a.svg",
+    "static/media/full.svg": "/clevertest/static/media/full.e9d5f02de3a98d29d29c7ccbd2100485.svg",
+    "static/media/icon-arrow.svg": "/clevertest/static/media/icon-arrow.5a00a2b7c130172dfb9550db63763e1a.svg",
+    "static/media/close.svg": "/clevertest/static/media/close.9a33a656fb802f1760b885719e9a7db8.svg",
     "index.html": "/clevertest/index.html",
+    "static/media/other.svg": "/clevertest/static/media/other.9a831c3e72fecedecdec757d4a3bfbe5.svg",
     "static/media/linkedin.svg": "/clevertest/static/media/linkedin.22350ee575e8296aa5ed764375eee7a1.svg",
     "static/media/arrow-reviews.svg": "/clevertest/static/media/arrow-reviews.65ba9ad1c1cac85978dd4f789d99c209.svg",
     "static/media/faceboock.svg": "/clevertest/static/media/faceboock.c3edff90632b52f4d943aee0818db1f7.svg",
-    "main.88d37f3b.css.map": "/clevertest/static/css/main.88d37f3b.css.map",
-    "main.055b24f8.js.map": "/clevertest/static/js/main.055b24f8.js.map"
+    "main.e7b5b307.css.map": "/clevertest/static/css/main.e7b5b307.css.map",
+    "main.ff5340af.js.map": "/clevertest/static/js/main.ff5340af.js.map"
   },
   "entrypoints": [
-    "static/css/main.88d37f3b.css",
-    "static/js/main.055b24f8.js"
+    "static/css/main.e7b5b307.css",
+    "static/js/main.ff5340af.js"
   ]
 }

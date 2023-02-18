@@ -1,35 +1,37 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import {Provider} from 'react-redux';
 import {HashRouter, Navigate, Route, Routes} from 'react-router-dom';
 
-import {Provider} from 'react-redux';
-import {BooksPage} from './pages/book';
-import {Layout} from './pages/layout';
+import {store} from './app/store';
+import {Layout} from './common/components/layout';
+import {LayoutMainPage} from './common/components/layout-main-page';
+import {BooksPage} from './pages/book-page';
 import {MainPage} from './pages/main';
 import {Сontract} from './pages/main/сontract/сontract';
 
 import './index.css';
-import {store} from './app/store';
-import {LayoutMainPage} from './pages/layout-main-page';
+import {ROUTS} from './constans/routs';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
+
 root.render(
     // <React.StrictMode>
-    <Provider store={store}>
-        <HashRouter>
-            <Routes>
-                <Route path="/" element={<Layout/>}>
-                    <Route element={<LayoutMainPage/>}>
-                        <Route index={true} element={<Navigate to="/books/all"/>}/>
-                        <Route path="/books/:category" element={<MainPage/>}/>
-                        <Route path="/rules" element={<Сontract title="Правила пользования"/>}/>
-                        <Route path="/treaty" element={<Сontract title="Договор оферты"/>}/>
+        <Provider store={store}>
+            <HashRouter>
+                <Routes>
+                    <Route path={ROUTS.HOME} element={<Layout/>}>
+                        <Route element={<LayoutMainPage/>}>
+                            <Route index={true} element={<Navigate to={ROUTS.ALL}/>}/>
+                            <Route path={ROUTS.MAIN_PAGE} element={<MainPage/>}/>
+                            <Route path={ROUTS.RULES} element={<Сontract title="Правила пользования"/>}/>
+                            <Route path={ROUTS.TREATY} element={<Сontract title="Договор оферты"/>}/>
+                        </Route>
+                        <Route path={ROUTS.BOOK_PAGE} element={<BooksPage/>}/>
                     </Route>
-                    <Route path="book/:category/:bookId" element={<BooksPage/>}/>
-                </Route>
-            </Routes>
-        </HashRouter>
-    </Provider>
+                </Routes>
+            </HashRouter>
+        </Provider>
     // </React.StrictMode>
 );

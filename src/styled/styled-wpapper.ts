@@ -5,7 +5,6 @@ export const Wrapper = styled.div`
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    overflow: clip;
     position: relative;
 `
 export const Container = styled.div`
@@ -14,5 +13,6 @@ export const Container = styled.div`
     margin: 0 auto;
     padding: 0 15px;
 `
+
 
 

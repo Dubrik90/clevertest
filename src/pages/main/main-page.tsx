@@ -1,38 +1,53 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useParams} from 'react-router-dom';
 
-import booksJS from '../../app/data.json';
+import {Error} from '../../common/components/error/error';
+import {Loader} from '../../common/components/loader/loader';
 import {Search} from '../../common/components/search/search';
-import {StyledDiv} from '../../styled/div/styled-div';
+import {useAppDispatch, useAppSelector} from '../../common/hooks/hooks';
+import {BookCardWrapper} from '../../styled/book-card-wrapper/styled-book-cardw-wrapper';
 import {BookPageStyle} from '../../styled/main-styled';
-import {BookCard} from '../book/book-card';
-
-const bookData = booksJS.publicistic
+import {BookCard} from '../book-card';
+import {getBooksTC} from '../book-page/api/book-page-reducer';
+import {BookType} from '../../types/types';
 
 export const MainPage = () => {
     const {category} = useParams()
+    const dispatch = useAppDispatch()
+    const books = useAppSelector(state => state.books.books)
+    const initialize = useAppSelector(state => state.books.initialize)
+    const statusLoading = useAppSelector(state => state.app.status)
 
-    const [open, setOpen] = useState<boolean>(true);
+    const [view, setView] = useState<boolean>(true);
     const onClickHandler = () => {
-        setOpen(!open)
+        setView(!view)
     }
+
+    useEffect(() => {
+        if (!initialize) {
+            dispatch(getBooksTC())
+        }
+    }, [dispatch, initialize])
+
+    if (statusLoading === 'loading') return <Loader/>
+    if (statusLoading === 'error') return <Error/>
 
     return (
         <BookPageStyle>
-            <Search open={open}
+            <Search view={view}
                     onClick={onClickHandler}
             />
-            <StyledDiv isOpen={open}>
+            <BookCardWrapper view={view}>
                 {
-                    bookData.map(el => (
+                    books.map((el: BookType) => (
                         <BookCard book={el}
                                   key={el.id}
-                                  isOpen={open}
+                                  isOpen={view}
                                   category={category}
                         />
                     ))
                 }
-            </StyledDiv>
+            </BookCardWrapper>
         </BookPageStyle>
     )
 };
